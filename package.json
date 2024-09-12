@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@uidotdev/usehooks": "^2.4.1",
     "@welcome-ui/avatar": "5.0.0",
     "@welcome-ui/box": "5.0.0",
     "@welcome-ui/button": "5.0.0",
@@ -17,9 +18,12 @@
     "@welcome-ui/icons": "5.0.0",
     "@welcome-ui/input-text": "5.0.0",
     "@welcome-ui/loader": "5.0.0",
+    "@welcome-ui/pagination": "5.0.0",
     "@welcome-ui/table": "5.0.0",
     "@welcome-ui/text": "5.0.0",
     "@xstyled/styled-components": "3.7.3",
+    "axios": "^1.7.7",
+    "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.2",

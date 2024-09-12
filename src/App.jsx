@@ -5,7 +5,7 @@ import { WuiProvider, createTheme } from "@welcome-ui/core";
 import { UserIcon } from "@welcome-ui/icons";
 import { Text } from "@welcome-ui/text";
 
-import UsersTable from "./components/UsersTable/UsersTable";
+import UserManagement from "./components/UserManagement/UserManagement";
 
 const theme = createTheme();
 
@@ -25,7 +25,7 @@ function App() {
           </Text>
         </Box>
         <Routes>
-          <Route path="/" element={<UsersTable />} />
+          <Route path="/" element={<UserManagement />} />
         </Routes>
       </Box>
     </WuiProvider>
