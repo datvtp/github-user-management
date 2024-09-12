@@ -664,6 +664,16 @@
     "@types/babel__core" "^7.20.5"
     react-refresh "^0.14.2"
 
+"@welcome-ui/avatar@5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@welcome-ui/avatar/-/avatar-5.0.0.tgz#4223de2eda8f1eda829138212b0e255f90c83fc6"
+  integrity sha512-zF6NJBzRBbOlmCaNcgNhle0ILB1UdpGaSiAU6lLD3PzxImaaHAabZ7i9xH3BYoIbV/8lJFgrHgY6gWqdq9HwHA==
+  dependencies:
+    "@welcome-ui/box" "^5.0.0"
+    "@welcome-ui/shape" "^5.0.0"
+    "@welcome-ui/system" "^5.0.0"
+    "@welcome-ui/text" "^5.0.0"
+
 "@welcome-ui/box@5.0.0":
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/@welcome-ui/box/-/box-5.0.0.tgz#018906b03480f17295c2fcf82e439ebc7e16e6dd"
@@ -821,6 +831,13 @@
   integrity sha512-BhLtzJXuvlX5uCChBDzG+Ptslgi8hSDXMQHtcdFPG604ravzMxSGGVeSQGnM4h747emFSNJftUGYjVen5ftqFg==
   dependencies:
     "@welcome-ui/system" "^5.0.0"
+
+"@welcome-ui/text@^5.0.0":
+  version "5.18.0"
+  resolved "https://registry.yarnpkg.com/@welcome-ui/text/-/text-5.18.0.tgz#fa379a40ba0f252568d4c3275d2ed0f59ce2e9e0"
+  integrity sha512-YxDO5F+qKMhiXtspHSz9vuOssxR72HR8o8US/xIxYUrfNoGbyg1Sn44RkzQ7k6wCfTGdjZFsO5L4YqIlpygVig==
+  dependencies:
+    "@welcome-ui/system" "^5.17.1"
 
 "@welcome-ui/utils@^5.0.0", "@welcome-ui/utils@^5.18.1":
   version "5.18.1"

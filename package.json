@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@welcome-ui/avatar": "5.0.0",
     "@welcome-ui/box": "5.0.0",
     "@welcome-ui/button": "5.0.0",
     "@welcome-ui/core": "5.0.0",
