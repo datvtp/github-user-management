@@ -1,12 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-import { searchUsers } from "../axios";
+import { searchUsersApi } from "../axios";
 
 export const fetchUsers = createAsyncThunk(
   "userSearch/fetchUsers",
   async (query, { rejectWithValue }) => {
     try {
-      const response = await searchUsers(query);
+      const response = await searchUsersApi(query);
       return response.data;
     } catch (error) {
       return rejectWithValue(error);

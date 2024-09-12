@@ -34,10 +34,18 @@ function UserTable({ users, totalPage, isLoading }) {
       <Table>
         <Table.Thead>
           <Table.Tr>
-            <Table.Th>Avatar</Table.Th>
-            <Table.Th>Username</Table.Th>
-            <Table.Th>Type</Table.Th>
-            <Table.Th>Score</Table.Th>
+            <Table.Th>
+              <Text>Avatar</Text>
+            </Table.Th>
+            <Table.Th>
+              <Text>Login</Text>
+            </Table.Th>
+            <Table.Th>
+              <Text>Type</Text>
+            </Table.Th>
+            <Table.Th>
+              <Text>Score</Text>
+            </Table.Th>
           </Table.Tr>
         </Table.Thead>
         <Table.Tbody>
