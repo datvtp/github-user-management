@@ -1,41 +1,30 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import { useDebounce } from "@uidotdev/usehooks";
+import { useDispatch, useSelector } from "react-redux";
 
 import { Box } from "@welcome-ui/box";
 import { InputText } from "@welcome-ui/input-text";
 
-import api from "../../axios";
+import { clearUsers, fetchUsers, setQuery } from "../../redux/userSearchSlice";
 
 import UserTable from "./UserTable";
 
 function UserManagement() {
-  const [searchValue, setSearchValue] = useState("");
-  const debouncedSearchValue = useDebounce(searchValue, 500);
-
-  const [userData, setUserData] = useState([]);
-  const [totalPage, setTotalPage] = useState(0);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const fetchUsers = async (search) => {
-    setIsLoading(true);
-    const response = await api.get(
-      `https://api.github.com/search/users?q=${search}`
-    );
-    setUserData(response.data.items);
-    const totalCount = response.data.total_count;
-    setTotalPage(totalCount > 10 ? totalCount % 10 : 1);
-    setIsLoading(false);
-  };
+  const dispatch = useDispatch();
+  const { users, totalPage, status, query } = useSelector(
+    (state) => state.userSearch
+  );
+  const debouncedSearchValue = useDebounce(query, 500);
 
   useEffect(() => {
     if (!debouncedSearchValue) {
-      setUserData([]);
+      dispatch(clearUsers());
       return;
     }
 
-    fetchUsers(debouncedSearchValue);
-  }, [debouncedSearchValue]);
+    dispatch(fetchUsers(debouncedSearchValue));
+  }, [debouncedSearchValue, dispatch]);
 
   return (
     <Box
@@ -47,18 +36,18 @@ function UserManagement() {
       spaceY="lg"
     >
       <InputText
-        value={searchValue}
+        value={query}
         onChange={(event) => {
-          setSearchValue(event.target.value);
+          dispatch(setQuery(event.target.value));
         }}
         w={500}
         placeholder="Search users from Github"
       />
 
       <UserTable
-        userData={userData}
+        users={users}
         totalPage={totalPage}
-        isLoading={isLoading}
+        isLoading={status === "loading"}
       />
     </Box>
   );

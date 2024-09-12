@@ -11,4 +11,6 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-export default api;
+export async function searchUsers(search) {
+  return await api.get(`https://api.github.com/search/users?q=${search}`);
+}

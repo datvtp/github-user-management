@@ -8,17 +8,17 @@ import { Table } from "@welcome-ui/table";
 import { Text } from "@welcome-ui/text";
 
 UserTable.propTypes = {
-  userData: PropTypes.array.isRequired,
+  users: PropTypes.array.isRequired,
   totalPage: PropTypes.number.isRequired,
   isLoading: PropTypes.bool.isRequired,
 };
 
-function UserTable({ userData, totalPage, isLoading }) {
+function UserTable({ users, totalPage, isLoading }) {
   if (isLoading) {
     return <Loader />;
   }
 
-  if (!userData.length) {
+  if (!users.length) {
     return <Text>Empty</Text>;
   }
 
@@ -41,7 +41,7 @@ function UserTable({ userData, totalPage, isLoading }) {
           </Table.Tr>
         </Table.Thead>
         <Table.Tbody>
-          {userData.map(({ id, avatar_url, login, type, score }) => (
+          {users.map(({ id, avatar_url, login, type, score }) => (
             <Table.Tr key={id}>
               <Table.Td>
                 <Avatar name={login} src={avatar_url} />
